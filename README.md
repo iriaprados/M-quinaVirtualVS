@@ -25,11 +25,11 @@ El primer paso, para crear este programa ha sido crear un pequeño esquema, para
 ## 2. Código
 El código contiene pilas, funciones y una Máquina Virtual, donde la Clase Pila y la clase Máquina Virtual (VM), se explicarán detalladamente luego. El código empieza inicializando la clase Pila, luego tenemos la función de `obtener_tipo()`, en la cual se fija el tipo de elemento, ya sea modelo, peinado, alas o zapatos, para poder clasificarlos y luego poder usarlo para verificar que tenemos solo un elemento de ese tipo. Después, se inicia la clase StackVM, que será explicada más adelante. Por último, tenemos el programa `__main__`, que nos dejara usar el comando <code>python VM.py nombreDelArchivo.Extension</code> que en este caso la extensión es **.fais**.
 
-###Clase Pila 
+### Clase Pila 
 Para empezar, las pilas son estructuras de datos que siguen el principio LIFO, es decir, el último elemento que entra es el primero en salir. El cual tiene unas operaciones básicas como `pop()`, `peek()`, `push()`y `is_empty()`, cada una tiene su función. Por ejemplo, con el `pop()` se elimina el último elemento insertado en la pila; con `push()` se introduce a la última posición un elemento; con el `peek()` sacas el último elemento insertado; y el `is_empty()` verifica si la pila está vacía.
 En esta clase, aparte de los comandos básicos, hemos creado otras dos operaciones que son: `size()` y `contains()`. `size()` devuelve la cantidad de elementos que están en la pila, y `contains()` devuelve si el elemento que se introduce lo tiene puesto la modelo o no.
 
-###Clase MV 
+### Clase MV 
 Se creará una Máquina Virtual basada en pilas, donde podremos vestir a una ‘modelo’ que guardará los accesorios que se ponga en una pila. Dentro de la Máquina Virtual tenemos cinco pilas, estas son: **vestir, modelos, peinados, alas y zapatos**, en las cuales se guardará información diferente dependiendo de cada una de ellas. Luego, se guarda en listas la información de cada elemento que se permite introducir. Tendremos guardado unos outfits en un registro de memoria y unos links de videos, los cuales estarán relacionados más adelante. 
 Se tienen cuatro funciones: `comparar_outfit()`, `completo()`, `interpretar_comando()` y `execute()`. 
 En la función `completo()`, se verifica si en la pila `vestir` tenemos el outfit completo o no. Si no se tiene un elemento, te dirá cual falta y pondrá que el outfit es original. También se fijará que solo haya un elemento de cada tipo.
